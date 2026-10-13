@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misi Detektif Sejarah Lokal</title>
+<style>
+:root {
+  --teal: #167d78;
+  --dark: #243447;
+  --cream: #fffaf1;
+  --gold: #f2bd57;
+  --line: #e2e8ec;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--dark);
+  background: linear-gradient(#eaf8f5, #fffaf1 440px, #fff);
+}
+.wrap { max-width: 950px; margin: auto; padding: 18px 14px 45px; }
+.hero {
+  background: linear-gradient(125deg, #155e63, #16877e);
+  color: white; border-radius: 24px; padding: 30px 24px;
+  box-shadow: 0 12px 30px #155e6322;
+}
+.pill {
+  display: inline-block; background: #ffffff22;
+  border: 1px solid #ffffff55; border-radius: 99px;
+  padding: 5px 11px; font-size: .82rem; font-weight: bold;
+}
+h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.2; margin: 15px 0 10px; }
+.hero p { color: #e5f7f3; }
+.tabs, .actions { display: flex; gap: 9px; flex-wrap: wrap; margin: 20px 0 16px; }
+button {
+  font: inherit; font-weight: bold; border: 1px solid var(--line);
+  border-radius: 12px; padding: 11px 15px; cursor: pointer;
+}
+button:hover { filter: brightness(.97); }
+.tab { background: white; color: #607184; }
+.tab.active { background: #dff3ef; color: #12635f; border-color: #a7dcd5; }
+.primary { background: var(--gold); color: #27394b; border-color: var(--gold); }
+.secondary { background: #eef2f4; color: #425166; }
+.hero .secondary { background: #ffffff20; color: white; border-color: #ffffff55; }
+.panel {
+  background: white; border: 1px solid var(--line); border-radius: 20px;
+  padding: 22px; margin-bottom: 16px; box-shadow: 0 8px 24px #1f3b4a08;
+}
+.panel h2 { margin: 0 0 5px; }
+.lead { color: #65758b; }
+.section {
+  background: #fffdf9; border: 1px solid var(--line);
+  border-radius: 15px; padding: 17px; margin: 14px 0;
+}
+.section h3 { color: #176c68; margin: 0 0 8px; }
+.section p { margin: 8px 0; }
+.section li { margin: 5px 0; }
+.section ul, .section ol { padding-left: 23px; }
+.tag {
+  display: inline-block; background: #e2f4f1; color: #12635f;
+  border-radius: 99px; padding: 3px 9px; font-size: .78rem;
+  font-weight: bold; margin-bottom: 8px;
+}
+.callout {
+  background: #fff6df; border-left: 4px solid var(--gold);
+  padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 16px 0;
+}
+.note {
+  background: #f6f8fa; border: 1px dashed #cfd9df;
+  border-radius: 12px; padding: 13px 14px;
+}
+.question {
+  border: 1px solid var(--line); border-radius: 15px;
+  padding: 17px; margin: 13px 0; background: #fffdf9;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.qnum {
+  flex: 0 0 34px; height: 34px; display: grid; place-items: center;
+  background: #fff0d0; border-radius: 10px; font-weight: bold; color: #75511b;
+}
+.question h3 { font-size: 1rem; font-weight: normal; margin: 3px 0; }
+.hidden { display: none !important; }
+footer { text-align: center; color: #8290a0; font-size: .85rem; padding: 10px; }
+@media(max-width:600px) {
+  .hero { padding: 24px 18px; }
+  .panel { padding: 16px; }
+  .tabs { display: grid; grid-template-columns: 1fr 1fr; }
+  .tab { padding: 10px 5px; }
+}
+@media print {
+  body { background: white; }
+  .hero, .tabs, .actions, footer { display: none !important; }
+  .hidden { display: block !important; }
+  .panel { box-shadow: none; border: 0; padding: 0; }
+  .section, .question { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <span class="pill">🕵️ PERTEMUAN KEDUA · SEJARAH KELAS X</span>
+  <h1>Misi Detektif Sejarah Lokal</h1>
+  <p>Melakukan Observasi Sederhana terhadap Fenomena Sejarah Lokal di Lingkungan Sekitar</p>
+  <div class="actions">
+    <button class="primary" onclick="showTab('materi')">📚 Baca Materi</button>
+    <button class="secondary" onclick="showTab('latihan')">✍️ Soal Esai</button>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button id="btn-materi" class="tab active" onclick="showTab('materi')">📖 Materi Pertemuan 2</button>
+  <button id="btn-latihan" class="tab" onclick="showTab('latihan')">✍️ Latihan Esai</button>
+</nav>
+
+<main>
+<section id="materi" class="panel">
+<h2>Materi Sejarah Kelas X SMA</h2>
+<p class="lead"><b>Pertemuan kedua:</b> Teknik melakukan observasi sejarah lokal</p>
+
+<div class="section">
+<span class="tag">01 · Persiapan</span>
+<h3>1. Menentukan Tujuan dan Fokus Observasi</h3>
+<p>Observasi adalah kegiatan mengamati objek atau keadaan secara terencana untuk memperoleh informasi. Dalam sejarah lokal, observasi dilakukan untuk mengenali jejak masa lalu yang masih dapat ditemukan di lingkungan sekitar.</p>
+<p>Sebelum mulai, tentukan tujuan dan pertanyaan yang ingin dijawab. Fokus yang jelas membuat pengamatan lebih terarah.</p>
+<p><b>Contoh:</b> saat mengamati pasar lama, fokusnya bisa berupa perubahan bentuk pasar, fungsi pasar bagi masyarakat, dan cerita perkembangannya.</p>
+</div>
+
+<div class="section">
+<span class="tag">02 · Sumber Sejarah</span>
+<h3>2. Mengenali Sumber Informasi Sejarah Lokal</h3>
+<p>Informasi sejarah bisa diperoleh dari berbagai sumber. Setiap sumber mempunyai kelebihan dan keterbatasan, sehingga beberapa sumber sebaiknya dibandingkan.</p>
+<ul>
+<li><b>Sumber lisan:</b> cerita dari saksi, tokoh masyarakat, pengelola tempat, atau warga yang mengetahui sejarah objek.</li>
+<li><b>Sumber tertulis:</b> buku, arsip, surat kabar lama, dokumen, prasasti, dan catatan.</li>
+<li><b>Sumber benda:</b> bangunan lama, peralatan, monumen, nisan, atau benda yang berkaitan dengan masa lalu.</li>
+<li><b>Sumber visual dan digital:</b> foto lama, peta, rekaman, koleksi digital, atau situs lembaga tepercaya.</li>
+</ul>
+<p>Contohnya, sejarah bangunan dapat ditelusuri dengan mengamati bangunan, berbicara dengan pengelola, dan membandingkan keterangan dengan foto atau dokumen.</p>
+</div>
+
+<div class="section">
+<span class="tag">03 · Pengamatan</span>
+<h3>3. Melakukan Pengamatan Langsung</h3>
+<p>Pengamatan langsung dilakukan dengan memperhatikan objek secara teliti. Catat hal yang benar-benar terlihat, bukan sesuatu yang hanya dibayangkan.</p>
+<p>Hal yang dapat diamati antara lain:</p>
+<ul>
+<li>Letak dan lingkungan sekitar objek.</li>
+<li>Bentuk, bahan, ukuran, dan kondisi objek.</li>
+<li>Bagian yang tampak masih asli atau sudah diperbaiki, jika dapat dikenali.</li>
+<li>Fungsi objek saat ini dan perubahan yang terlihat.</li>
+<li>Informasi pada papan keterangan atau tanda yang tersedia.</li>
+</ul>
+<p>Catatan yang jelas lebih berguna. Misalnya, “dinding bangunan terbuat dari batu bata dan sebagian permukaannya mengelupas” lebih spesifik daripada “bangunannya terlihat tua”.</p>
+</div>
+
+<div class="section">
+<span class="tag">04 · Wawancara</span>
+<h3>4. Mengumpulkan Informasi melalui Wawancara</h3>
+<p>Wawancara adalah kegiatan mengajukan pertanyaan kepada narasumber untuk mendapatkan informasi. Narasumber dapat berupa warga lama, pengelola situs, atau tokoh masyarakat.</p>
+<ol>
+<li>Tentukan informasi yang ingin diketahui.</li>
+<li>Susun pertanyaan yang singkat, sopan, dan mudah dipahami.</li>
+<li>Perkenalkan diri dan jelaskan tujuan wawancara.</li>
+<li>Minta izin sebelum merekam, memotret, atau mencatat informasi pribadi.</li>
+<li>Dengarkan jawaban dan catat poin pentingnya.</li>
+<li>Ucapkan terima kasih setelah selesai.</li>
+</ol>
+<p><b>Contoh pertanyaan:</b> “Sejak kapan tempat ini dikenal masyarakat?” atau “Apakah fungsi tempat ini pernah berubah?”</p>
+</div>
+
+<div class="section">
+<span class="tag">05 · Dokumentasi</span>
+<h3>5. Mendokumentasikan Hasil Observasi</h3>
+<p>Dokumentasi membantu menyimpan hasil pengamatan. Bentuknya dapat berupa catatan lapangan, foto, sketsa, rekaman wawancara, atau salinan informasi dari papan keterangan.</p>
+<p>Catatan lapangan sebaiknya memuat tanggal dan waktu, lokasi, objek yang diamati, hasil pengamatan, keterangan narasumber, serta sumber lain yang digunakan. Pisahkan hasil pengamatan sendiri dari informasi yang diceritakan orang lain.</p>
+<p>Foto sebaiknya diberi keterangan lokasi dan bagian objek yang ditampilkan. Dokumentasi dilakukan dengan izin dan tidak mengganggu masyarakat.</p>
+</div>
+
+<div class="section">
+<span class="tag">06 · Pemeriksaan</span>
+<h3>6. Memeriksa Keakuratan Informasi</h3>
+<p>Tidak semua informasi yang diperoleh langsung dapat dianggap benar. Ingatan narasumber bisa berbeda, dokumen mungkin tidak lengkap, dan kondisi saat ini belum tentu menjelaskan seluruh keadaan masa lalu.</p>
+<ul>
+<li>Bandingkan keterangan dari lebih dari satu narasumber jika memungkinkan.</li>
+<li>Cocokkan cerita lisan dengan foto, arsip, buku, atau sumber lain.</li>
+<li>Perhatikan siapa yang membuat sumber, kapan dibuat, dan untuk tujuan apa.</li>
+<li>Bedakan fakta yang terlihat, keterangan narasumber, dan dugaan pribadi.</li>
+<li>Jika bukti belum cukup, tuliskan bahwa informasi tersebut belum dapat dipastikan.</li>
+</ul>
+<div class="callout"><b>🔎 Ingat!</b><br>Jika warga mengatakan sebuah bangunan berusia seratus tahun, catat itu sebagai keterangan narasumber. Jangan langsung menjadikannya fakta pasti sebelum menemukan bukti pendukung.</div>
+</div>
+
+<div class="section">
+<span class="tag">07 · Penafsiran</span>
+<h3>7. Menghubungkan Temuan dengan Sejarah</h3>
+<p>Setelah informasi terkumpul, hubungkan bukti dengan pertanyaan observasi. Pertimbangkan perubahan yang terjadi dari masa lalu hingga sekarang, tetapi jangan membuat kesimpulan yang melampaui bukti.</p>
+<p>Contohnya, pasar yang masih berfungsi sampai sekarang mungkin mengalami perubahan bentuk atau jenis barang dagangan. Foto lama dan cerita warga dapat membantu menjelaskan perubahan tersebut.</p>
+</div>
+
+<div class="section">
+<span class="tag">08 · Laporan</span>
+<h3>8. Menulis Laporan Hasil Observasi</h3>
+<p>Laporan menjelaskan proses dan hasil pengamatan secara teratur. Laporan sederhana dapat memuat:</p>
+<ol>
+<li><b>Judul:</b> nama atau topik objek.</li>
+<li><b>Pendahuluan:</b> alasan memilih objek dan tujuan observasi.</li>
+<li><b>Waktu dan tempat:</b> kapan serta di mana observasi dilakukan.</li>
+<li><b>Metode:</b> pengamatan langsung, wawancara, atau penelusuran dokumen.</li>
+<li><b>Hasil observasi:</b> uraian objek dan informasi yang ditemukan.</li>
+<li><b>Pembahasan dan kesimpulan:</b> arti temuan serta jawaban atas tujuan observasi.</li>
+<li><b>Sumber informasi:</b> narasumber, buku, dokumen, atau sumber lain yang digunakan.</li>
+</ol>
+<p>Gunakan bahasa yang mudah dipahami, susun informasi secara runtut, dan jangan menambahkan cerita yang tidak didukung sumber.</p>
+</div>
+
+<div class="section">
+<span class="tag">09 · Etika</span>
+<h3>9. Menjaga Etika selama Observasi</h3>
+<ul>
+<li>Bersikap sopan dan menghormati masyarakat setempat.</li>
+<li>Meminta izin sebelum memasuki area tertentu, memotret, merekam, atau melakukan wawancara.</li>
+<li>Tidak merusak, memindahkan, atau mengambil benda yang diduga memiliki nilai sejarah.</li>
+<li>Menghormati adat, kepercayaan, dan aturan di lokasi pengamatan.</li>
+<li>Menjaga kebersihan dan tidak mengganggu kegiatan warga.</li>
+<li>Menulis informasi dengan jujur serta mencantumkan sumbernya.</li>
+</ul>
+<p>Etika penting karena peninggalan sejarah dan cerita masyarakat merupakan bagian dari warisan bersama yang perlu dihormati dan dilestarikan.</p>
+</div>
+
+<div class="callout"><b>📌 Kesimpulan Materi</b><br>Observasi sejarah lokal bukan hanya melihat benda atau tempat lama. Siswa perlu menentukan tujuan, mengumpulkan informasi dari beberapa sumber, mencatat bukti, memeriksa kebenaran informasi, menyusun penjelasan berdasarkan bukti, dan menjaga etika.</div>
+<div class="actions"><button class="primary" onclick="showTab('latihan')">Lanjut ke Soal Esai →</button></div>
+</section>
+
+<section id="latihan" class="panel hidden">
+<h2>✍️ Latihan Esai</h2>
+<p class="lead">Baca pertanyaan dengan teliti, lalu jawab dengan bahasamu sendiri berdasarkan materi.</p>
+<div class="note">📝 <b>Petunjuk:</b> Semua soal berbentuk esai. Tidak ada kotak jawaban di web. Tuliskan jawaban di buku tulis masing-masing.</div>
+
+<div class="question"><span class="qnum">1</span><h3>Mengapa sebelum melakukan observasi sejarah lokal kita perlu menentukan tujuan dan fokus pengamatan?</h3></div>
+<div class="question"><span class="qnum">2</span><h3>Sebutkan tiga jenis sumber informasi yang dapat digunakan dalam observasi sejarah lokal dan berikan satu contoh untuk masing-masing sumber!</h3></div>
+<div class="question"><span class="qnum">3</span><h3>Bagaimana cara melakukan wawancara yang baik dengan masyarakat saat mencari informasi tentang sejarah suatu tempat?</h3></div>
+<div class="question"><span class="qnum">4</span><h3>Mengapa informasi dari narasumber perlu dibandingkan dengan sumber lain sebelum dijadikan kesimpulan sejarah?</h3></div>
+<div class="question"><span class="qnum">5</span><h3>Pilih satu tempat atau peninggalan yang memiliki nilai sejarah di daerahmu. Jelaskan langkah-langkah observasi yang akan kamu lakukan, mulai dari persiapan sampai menyusun laporan!</h3></div>
+
+<div class="actions">
+<button class="primary" onclick="window.print()">🖨️ Cetak Materi/Soal</button>
+<button class="secondary" onclick="showTab('materi')">← Kembali ke Materi</button>
+</div>
+</section>
+</main>
+<footer>Belajar sejarah dimulai dari lingkungan sekitar · Misi Detektif Sejarah Lokal</footer>
+</div>
+
+<script>
+function showTab(name) {
+  document.getElementById('materi').classList.toggle('hidden', name !== 'materi');
+  document.getElementById('latihan').classList.toggle('hidden', name !== 'latihan');
+  document.getElementById('btn-materi').classList.toggle('active', name === 'materi');
+  document.getElementById('btn-latihan').classList.toggle('active', name === 'latihan');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
